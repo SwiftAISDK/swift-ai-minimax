@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "packages": [
+    {
+      "name": "@ai-sdk/minimax",
+      "reviewedVersion": "3.0.65",
+      "ledgerKind": "provider",
+      "evidence": "`AIProviders.miniMax`, `MiniMaxProvider`, `AnthropicLanguageModel`, `MiniMaxVideoModel`, `MiniMaxProviderTests.swift`, `MediaStatusRedirectUpstreamTests.swift`",
+      "reviewStatus": "imported-reviewed-with-gaps",
+      "archiveIntegrity": "sha512-6Box1KnreHwCZ5pOpjNuiU/OoXNW1xrkuzhgNA6XD7+HdNw67Z+FuSZU5Sdbt6ieQ854jF65siqsV5FyMNRbow==",
+      "sourceRef": "npm:@ai-sdk/minimax@3.0.65",
+      "testRef": "682e2dd71456f14f9da33a1b983d1998c3a1184c",
+      "testRefRelationship": "inventory-snapshot-not-release-verified",
+      "contractFamilies": [],
+      "contractReview": "not-imported; inspect upstream declarations before extraction"
+    }
+  ]
+}
