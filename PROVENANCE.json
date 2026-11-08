@@ -1,13 +1,13 @@
 {
   "schemaVersion": 1,
   "package": "swift-ai-minimax",
-  "version": "1.1.0",
-  "releaseID": "weekly-upstream-20261101",
+  "version": "1.2.0",
+  "releaseID": "weekly-upstream-20261108",
   "source": {
-    "commit": "ea057797494ab9bb66df8c6bfd8edc10245b20e7",
-    "baseCommit": "ea057797494ab9bb66df8c6bfd8edc10245b20e7",
+    "commit": "8e233ff96fb809445aff9a5c06bb6149a24b94da",
+    "baseCommit": "8e233ff96fb809445aff9a5c06bb6149a24b94da",
     "workingTree": false,
-    "inputsSHA256": "b46f3e07b0a583d6fee81035987d74a06fc5c6109cbdf228144d1172d2c3676e"
+    "inputsSHA256": "987359720075cb67dd8bc45bdc049aee4c5d5a42b67a7eb148e697ce5d18bd77"
   },
   "dependencies": [
     {
@@ -16,33 +16,34 @@
     },
     {
       "package": "swift-ai-anthropic",
-      "from": "1.2.0"
+      "from": "1.3.0"
     }
   ],
   "changes": [
     {
-      "id": "weekly-upstream-20261101",
-      "notes": "Lazy apiKeyProvider callback shared by Messages x-api-key and video Bearer requests. none/minimal portable reasoning maps to low using the shared compatibility warning; explicit provider efforts retain precedence. Reviewed upstream: @ai-sdk/minimax 3.0.65 to 3.0.71. Validation passed: node Scripts/test-packages.mjs (all 52 owning package suites and the compatibility facade); node Scripts/sdk.mjs generate --check; node --test Scripts/tests/*.test.cjs (27 passed); docs-site check and build (100 pages). Live provider calls were not run.",
-      "compatibility": "Minor release for additive native API; existing static settings and call sites remain compatible. Updated direct dependency minimums are recorded in the manifest. Existing documented JS/framework and native product gaps remain; version-delta review does not imply full parity or live-service testing. Explicit custom authentication skips an unused credential supplier, a deliberate native callback-order adaptation."
+      "id": "weekly-upstream-20261108",
+      "notes": "Add typed standard/priority admission tier options using the reviewed Anthropic mapping. Reviewed published upstream delta: @ai-sdk/minimax 3.0.71 to 3.0.76. Validation passed: node Scripts/test-packages.mjs (all 52 owning packages plus the complete local facade; 3,965 reported tests and 33 explicit live skips); node Scripts/sdk.mjs dev test; node Scripts/sdk.mjs generate --check; node --test Scripts/tests/*.test.cjs (27 passed); core/provider isolation and version resolution; 52 deterministic package exports, 106 catalog consumers and four additional exact retained-minimum graphs; docs-site install/check/build (100 pages); git diff --check. No paid live-service calls were run. The publication pipeline requires successful Swift 6.3.3 CI at the exact canonical source before publishing.",
+      "compatibility": "Minor release for additive native functionality under the project convention. Existing call sites and exact old selectors are retained. Direct minimums change only for concrete API use or required inherited behavior. Version-delta review does not establish full-package parity or live-service acceptance. Updated direct ranges: swift-ai-anthropic 1.2.0 to 1.3.0."
     }
   ],
   "canonicalDirectory": "Packages/swift-ai-minimax",
   "upstream": [
     {
       "name": "@ai-sdk/minimax",
-      "reviewedVersion": "3.0.71",
+      "reviewedVersion": "3.0.76",
       "ledgerKind": "provider",
-      "evidence": "`AIProviders.miniMax`, `MiniMaxProvider`, `AnthropicLanguageModel`, `MiniMaxVideoModel`, `MiniMaxProviderTests.swift`, `MediaStatusRedirectUpstreamTests.swift`; 2026-11-01 delta: Docs/WeeklyUpstreamAudit20261101.json",
+      "evidence": "`AIProviders.miniMax`, `MiniMaxProvider`, `AnthropicLanguageModel`, `MiniMaxVideoModel`, `MiniMaxProviderTests.swift`, `MediaStatusRedirectUpstreamTests.swift`; 2026-11-01 delta: Docs/WeeklyUpstreamAudit20261101.json; 2026-11-08 delta: Docs/WeeklyUpstreamAudit20261108.json",
       "reviewStatus": "imported-reviewed-with-gaps",
-      "archiveIntegrity": "sha512-eH3VLLPe/DOzbwx5C0WrkxxbvmSJyz8pOv29ZCyG2bh4LEF8vG+LMg5q29cEVHL2seBG6lm87NoBUNrmvsWb2w==",
-      "sourceRef": "npm:@ai-sdk/minimax@3.0.71",
-      "testRef": "028a025398782f4938303f48fbeee45c79af544b",
+      "archiveIntegrity": "sha512-EQQ+9I2eixP3sinf1IQGR5c7Vdko7Tl8uRbjZTKrht8oAKe91sB+l4B4FaBpgfXL36WdXUyKHoKeEptLi4f20A==",
+      "sourceRef": "npm:@ai-sdk/minimax@3.0.76",
+      "testRef": "0f3a85f92d1ce06ccde01d662407ef83e097a712",
       "testRefRelationship": "matching-release",
       "contractFamilies": [
         "LanguageModelV4",
-        "ProviderV4"
+        "ProviderV4",
+        "VideoModelV4"
       ],
-      "contractReview": "2026-11-01: published declarations, source and exact matching-release changed tests reviewed; scoped dispositions and Swift translations are in Docs/WeeklyUpstreamAudit20261101.json. Existing broader product gaps remain; reviewed delta is not full-package parity."
+      "contractReview": "2026-11-08: published declarations/source and exact matching-release changed tests reviewed; native implementations, per-file dispositions and broader retained gaps are recorded in Docs/WeeklyUpstreamAudit20261108.json. Reviewed delta is not full-package or live-service parity."
     }
   ],
   "note": "Independent port. Imported test refs and contract review gaps retain their original status; export is not new upstream parity proof.",
@@ -61,11 +62,11 @@
     },
     {
       "canonicalPath": "Packages/swift-ai-minimax/Porting/map.json",
-      "sha256": "6cb5c1cbe02a097b9b3060ecaf3e8b0ffe5264756ffa30319e19e476add63bd9"
+      "sha256": "c17b454f6e9df741cf0b018baef46d39a6ebe62a8cc8bcc5505b54302e21f364"
     },
     {
       "canonicalPath": "Packages/swift-ai-minimax/README.md",
-      "sha256": "33fa746b425fe1896be22e3cb704b4622a18019b60ed4c569032f353b2271fbb"
+      "sha256": "e25cd5d92a5970474b7c2e28c187367e0c29666a06a004c248c2b5981938ac47"
     },
     {
       "canonicalPath": "Packages/swift-ai-minimax/Sources/SwiftAIMiniMax/MiniMaxHTTPConfiguration.swift",
@@ -73,7 +74,7 @@
     },
     {
       "canonicalPath": "Packages/swift-ai-minimax/Sources/SwiftAIMiniMax/MiniMaxProvider.swift",
-      "sha256": "ae9b81b71924e673459b069c89dedce73acdafed4d893b9f0e402d8a1269e893"
+      "sha256": "019763f7968472551eae26f2c996c38f9ffcd53852d5c500c89c599cf59675dd"
     },
     {
       "canonicalPath": "Packages/swift-ai-minimax/Sources/SwiftAIMiniMax/MiniMaxVideoModel.swift",
@@ -85,7 +86,7 @@
     },
     {
       "canonicalPath": "Packages/swift-ai-minimax/Tests/SwiftAIMiniMaxTests/MiniMaxProviderTests.swift",
-      "sha256": "b18be1f5082fa2f372c5c3480d97503907438eb8377610b491841bbc04e79adc"
+      "sha256": "cbb77098e311c1ea8587b2f97789ed00502bcacb0c2d532fa80fe039f2d9a589"
     },
     {
       "canonicalPath": "Packages/swift-ai-minimax/Tests/SwiftAIMiniMaxTests/TestSupport.swift",
@@ -94,6 +95,14 @@
     {
       "canonicalPath": "Packages/swift-ai-minimax/Tests/SwiftAIMiniMaxTests/Weekly20261101MiniMaxTests.swift",
       "sha256": "69af94e023888da660493011b1c8748c669238628bbda5fc98d0b4a57c98b15b"
+    },
+    {
+      "canonicalPath": "Packages/swift-ai-minimax/Tests/SwiftAIMiniMaxTests/Weekly20261108ProviderSelectorCompatibilityTests.swift",
+      "sha256": "b80d189991534a03919e2bd73023e1dd2b6550e3212cf30f76ea1efcb89626f2"
+    },
+    {
+      "canonicalPath": "Packages/swift-ai-minimax/Tests/SwiftAIMiniMaxTests/Weekly20261108ServiceTierTests.swift",
+      "sha256": "b7608bb16897503ea185a7a53b50354347621c42247a81e1aaa19a8ac90aeef1"
     },
     {
       "canonicalPath": "Packages/swift-ai-minimax/Tests/SwiftAIMiniMaxTests/WeeklyMiniMax20261023Tests.swift",
